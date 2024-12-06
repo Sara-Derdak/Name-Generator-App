@@ -1,0 +1,79 @@
+{
+	"name": "css-flexbox-cheatsheet",
+	"displayName": "CSS Flexbox Cheatsheet",
+	"description": "Open a flexbox cheatsheet directly in VS Code.",
+	"version": "3.3.4",
+	"engines": {
+		"vscode": "^1.80.0"
+	},
+	"categories": [
+		"Other",
+		"Programming Languages"
+	],
+	"license": "MIT",
+	"icon": "images/icon.png",
+	"main": "./out/extension.js",
+	"contributes": {
+		"keybindings": [
+			{
+				"command": "flexbox.cheatsheet",
+				"key": "Ctrl+K K",
+				"mac": "Cmd+K K"
+			}
+		],
+		"commands": [
+			{
+				"command": "flexbox.cheatsheet",
+				"title": "Open CSS Flexbox Cheatsheet"
+			}
+		]
+	},
+	"activationEvents": [
+		"onLanguage:css",
+		"onLanguage:less",
+		"onLanguage:sass",
+		"onLanguage:scss"
+	],
+	"publisher": "dzhavat",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dzhavat/css-flexbox-cheatsheet"
+	},
+	"vsce": {
+		"githubBranch": "main"
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js",
+		"lint": "eslint src --ext ts"
+	},
+	"devDependencies": {
+		"@types/glob": "8.1.0",
+		"@types/mocha": "10.0.2",
+		"@types/node": "18.16.16",
+		"@types/vscode": "1.80.0",
+		"@typescript-eslint/eslint-plugin": "6.7.4",
+		"@typescript-eslint/parser": "6.7.4",
+		"@vscode/webview-ui-toolkit": "1.2.2",
+		"eslint": "8.50.0",
+		"glob": "10.3.10",
+		"mocha": "10.2.0",
+		"typescript": "^5.2.0",
+		"vsce": "2.15.0",
+		"vscode-test": "1.6.1"
+	},
+	"__metadata": {
+		"id": "5f70f405-914a-43f6-b8ff-740495ee6b34",
+		"publisherId": "2797277f-872f-4cae-81df-5756e648c817",
+		"publisherDisplayName": "Dzhavat Ushev",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1707847276853,
+		"pinned": false
+	}
+}

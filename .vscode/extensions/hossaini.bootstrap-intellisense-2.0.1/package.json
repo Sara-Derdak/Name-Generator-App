@@ -1,0 +1,95 @@
+{
+	"name": "bootstrap-intellisense",
+	"displayName": "Bootstrap IntelliSense",
+	"version": "2.0.1",
+	"description": "Enhance Bootstrap development with CSS class autocompletion for efficient coding in Visual Studio Code.",
+	"categories": [
+		"Linters",
+		"Snippets"
+	],
+	"keywords": [
+		"bootstrap",
+		"bootstrap5",
+		"css",
+		"intellisense",
+		"autocomplete",
+		"vscode"
+	],
+	"license": "MIT",
+	"publisher": "hossaini",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aviiceena/bootstrap-intellisense"
+	},
+	"engines": {
+		"vscode": "^1.67.1"
+	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [],
+		"icons": {
+			"bootstrap-icon-enable": {
+				"description": "Bootstrap icon Enable",
+				"default": {
+					"fontPath": "./assets/bootstrap-icon-font.woff",
+					"fontCharacter": "\\E900"
+				}
+			},
+			"bootstrap-icon-disable": {
+				"description": "Bootstrap icon disable",
+				"default": {
+					"fontPath": "./assets/bootstrap-icon-font.woff",
+					"fontCharacter": "\\E901"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"deploy": "vsce publish",
+		"vscode:prepublish": "npm run package",
+		"compile": "npm run check-types && npm run lint && node esbuild.js",
+		"watch": "npm-run-all -p watch:*",
+		"watch:esbuild": "node esbuild.js --watch",
+		"watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+		"package": "npm run check-types && npm run lint && node esbuild.js --production",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"check-types": "tsc --noEmit",
+		"lint": "eslint src --ext ts",
+		"test": "vscode-test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^10.0.7",
+		"@types/node": "20.x",
+		"@types/vscode": "^1.67.1",
+		"@typescript-eslint/eslint-plugin": "^7.14.1",
+		"@typescript-eslint/parser": "^7.11.0",
+		"@vscode/test-cli": "^0.0.9",
+		"@vscode/test-electron": "^2.4.0",
+		"esbuild": "^0.21.5",
+		"eslint": "^8.57.0",
+		"npm-run-all": "^4.1.5",
+		"typescript": "^5.4.5"
+	},
+	"icon": "assets/icons/icon.png",
+	"sponsor": {
+		"url": "https://ko-fi.com/hossaini"
+	},
+	"__metadata": {
+		"id": "7846dad3-dea1-40d3-a7f2-da368838d5fb",
+		"publisherId": "5aea1c1b-e108-4f19-8e0e-4f1029e56107",
+		"publisherDisplayName": "Hosain Hossaini",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1731877761153,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}
